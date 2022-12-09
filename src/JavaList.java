@@ -15,9 +15,7 @@ public class JavaList {
         for (int i = 0; i < numOfQueries; i++) {
             String action = input.next();
             if (action.equals("Insert")) {
-                int x = input.nextInt();
-                int y = input.nextInt();
-                listik.add(x, y);
+                listik.add(input.nextInt(), input.nextInt());
             } else {
                 listik.remove(input.nextInt());
             }
