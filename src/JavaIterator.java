@@ -1,21 +1,30 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
-
-public class JavaIterator{
-    public static <T> void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-        ArrayList mylist = new ArrayList();
-        mylist.add("Hello");
-        mylist.add("Java");
-        mylist.add("4");
-        Iterator it = mylist.iterator();
-        while(it.hasNext()) {
-            Object element = it.next();
-            System.out.println((String) element);
-            //List<Object> abc = new ArrayList<>();
-            //method1(new ArrayList<>())
+import java.util.*;
+public class JavaIterator {
+    @SuppressWarnings("rawtypes")
+    static Iterator func(ArrayList mylist){
+        Iterator it=mylist.iterator();
+        while(it.hasNext()){
+            if(it.next() instanceof String)
+                break;
         }
+        return it;
+    }
+
+    public static void main(String []args)    {
+        ArrayList mylist = new ArrayList();
+        Scanner input = new Scanner(System.in);
+        while (input.hasNextInt()) {
+            mylist.add(input.nextInt());
+        }
+        mylist.add("###");
+        while(input.hasNext()){
+            mylist.add(input.next());
+        }
+        Iterator it=func(mylist);
+        while(it.hasNext())
+        {
+            System.out.println((String)it.next());
+        }
+
     }
 }
