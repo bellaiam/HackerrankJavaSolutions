@@ -5,19 +5,21 @@ interface Sport{
     void calculateAvgAge(int[] age);
     void retirePlayer(int id);
 }
+
 class Cricket implements Sport{
     int[] playerIDs;
+
     public Cricket (){
         playerIDs = new int[11];
         Arrays.fill(playerIDs, 1);
         System.out.println("A new cricket team has been formed");
     }
     public void calculateAvgAge(int[] age){
-        double sum = 0;
-        for( int i : age) {
-            sum += i;
+        double ageSum = 0;
+        for(int i : age) {
+            ageSum += i;
         }
-        double avgAge = sum/age.length;
+        double avgAge = ageSum/age.length;
         System.out.println("The average age of the team is " + String.format("%.2f", avgAge));
     }
     public void retirePlayer (int id){
@@ -37,12 +39,12 @@ class Football implements Sport {
         System.out.println("A new football team has been formed");
     }
     public void calculateAvgAge(int[] age){
-        int sum = 0;
+        int ageSum = 0;
         for(int i : age) {
-            sum += i;
+            ageSum += i;
         }
-        double avgAge = (double)sum/age.length;
-        System.out.printf("The average age of the team is %.2f\n", avgAge);
+        double avgAge = (double)ageSum/age.length;
+        System.out.println("The average age of the team is " + String.format("%.2f", avgAge));
     }
     public void retirePlayer (int id){
         if (playerIDs[id-1] == -1){
@@ -60,6 +62,7 @@ class Football implements Sport {
         }
     }
 }
+
 public class Solution{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
