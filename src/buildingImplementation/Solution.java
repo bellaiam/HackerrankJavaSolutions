@@ -21,7 +21,7 @@ Construction for floor number ____ not completed in ____ 
 The ____ has ____ floors
 */
 class School implements Building {
-    private int[] floors;
+    private int [] floors;
 
     School(int n) {
         floors = new int[n];
