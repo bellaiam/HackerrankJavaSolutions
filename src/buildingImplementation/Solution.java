@@ -1,4 +1,6 @@
 package buildingImplementation;
+
+
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -42,7 +44,7 @@ class School implements Building{
         else if(floors[floorNumber-1]==1){
             System.out.println("Construction for floor number "+floorNumber+" completed in school");
         }
-        else if(floors[floorNumber-1]==0){
+        else {
             System.out.println("Construction for floor number "+floorNumber+" not completed in school");
         }
 
@@ -74,15 +76,15 @@ class Hospital implements Building{
             System.out.println("Floor number "+floorNumber+" does not exist in hospital");
         }
         else if(floors[floorNumber-1]==1){
-            System.out.println("Construction for floor number "+floorNumber+" completed in hospital");
+            System.out.println("Construction for floor number " + floorNumber + " completed in hospital");
         }
-        else if(floors[floorNumber-1]==0){
-            System.out.println("Construction for floor number "+floorNumber+" not completed in hospital");
+        else {
+            System.out.println("Construction for floor number " + floorNumber + " not completed in hospital");
         }
 
     }
     public  void printNumberOfFloors(){
-        System.out.println("The hospital has "+floors.length+" floors");
+        System.out.println("The hospital has " + floors.length +" floors");
     }
 }
 
