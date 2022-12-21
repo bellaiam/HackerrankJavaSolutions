@@ -23,65 +23,56 @@ The ____ has ____ floors
 */
 class School implements Building{
     int[]floors;
-    School(int n)
-    {
+    School(int n) {
         floors=new int[n];
         Arrays.fill(floors,0);
         System.out.println("A school is being constructed");
     }
     public void floorCompleted(int floorNumber){
-        if(floorNumber<1 || floorNumber>floors.length){
-            System.out.println("Floor number "+floorNumber+" does not exist in school");
+        if(floorNumber < 1 || floorNumber > floors.length){
+            System.out.println("Floor number " + floorNumber +" does not exist in school");
         }else {
-            floors[floorNumber-1]=1;
-            System.out.println("Construction for floor number "+floorNumber+" completed in school");
+            floors[floorNumber - 1] = 1;
+            System.out.println("Construction for floor number " + floorNumber + " completed in school");
         }
 
     }
     public  void printStatus(int floorNumber){
-        if(floorNumber<1 || floorNumber>floors.length){
-            System.out.println("Floor number "+floorNumber+" does not exist in school");}
-        else if(floors[floorNumber-1]==1){
-            System.out.println("Construction for floor number "+floorNumber+" completed in school");
+        if (floorNumber < 1 || floorNumber > floors.length){
+            System.out.println("Floor number " + floorNumber + " does not exist in school");
+        } else if (floors[floorNumber - 1] == 1) {
+            System.out.println("Construction for floor number " + floorNumber + " completed in school");
+        } else {
+            System.out.println("Construction for floor number " + floorNumber + " not completed in school");
         }
-        else {
-            System.out.println("Construction for floor number "+floorNumber+" not completed in school");
-        }
-
     }
     public  void printNumberOfFloors(){
-        System.out.println("The school has "+floors.length+" floors");
+        System.out.println("The school has " + floors.length + " floors");
     }
 }
 class Hospital implements Building{
     int[]floors;
-    Hospital(int n)
-    {
-        floors=new int[n];
+    Hospital(int n) {
+        floors = new int[n];
         Arrays.fill(floors,0);
         System.out.println("A hospital is being constructed");
     }
     public void floorCompleted(int floorNumber){
-        if(floorNumber<1 || floorNumber>floors.length ){
-            System.out.println("Floor number "+floorNumber+" does not exist in hospital");
-        }
-        else {
-            floors[floorNumber-1]=1;
-            System.out.println("Construction for floor number "+floorNumber+" completed in hospital");
-        }
-
-    }
-    public  void printStatus(int floorNumber){
-        if(floorNumber<1 || floorNumber>floors.length){
-            System.out.println("Floor number "+floorNumber+" does not exist in hospital");
-        }
-        else if(floors[floorNumber-1]==1){
+        if(floorNumber < 1 || floorNumber > floors.length ){
+            System.out.println("Floor number " + floorNumber + " does not exist in hospital");
+        } else {
+            floors[floorNumber - 1] = 1;
             System.out.println("Construction for floor number " + floorNumber + " completed in hospital");
         }
-        else {
+    }
+    public  void printStatus(int floorNumber){
+        if(floorNumber < 1 || floorNumber > floors.length){
+            System.out.println("Floor number " + floorNumber + " does not exist in hospital");
+        } else if(floors[floorNumber - 1] == 1){
+            System.out.println("Construction for floor number " + floorNumber + " completed in hospital");
+        } else {
             System.out.println("Construction for floor number " + floorNumber + " not completed in hospital");
         }
-
     }
     public  void printNumberOfFloors(){
         System.out.println("The hospital has " + floors.length +" floors");
